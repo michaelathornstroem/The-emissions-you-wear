@@ -1,0 +1,56 @@
+{
+    "name": "The Emissions You Wear 2",
+    "description": "Calculates the total CO2 emission and H2O usage for your shoppingcart",
+    "version": "0.01",
+    "background": {
+        "service_worker": "background.js"
+    },
+    "permissions": [
+        "scripting",
+        "tabs"
+    ],
+    "host_permissions": [
+        "*://*/*"
+    ],
+    "content_scripts": [
+        {
+            "run_at": "document_end",
+            "matches": [
+                "https://www.na-kd.com/sv/kassan",
+                "https://www2.hm.com/sv_se/cart",
+                "https://www.shein.se/cart",
+                "https://www.zalando.se/cart",
+                "https://www.zalando.se/cart/",
+                "https://nelly.com/se/kassa/",
+                "https://www.ellos.se/cart/*",
+                "https://www.bubbleroom.se/Shop/Order/Index",
+                "https://junkyard.com/sv/functional/kassa/varukorg/",
+                "https://bikbok.com/sv/butik/Checkout/CartPage/"
+            ],
+            "css": [
+                "main.css"
+            ]
+        }
+    ],
+    "manifest_version": 3,
+    "icons": {
+        "16": "/images/icon16.png",
+        "48": "/images/icon48.png",
+        "128": "/images/icon128.png"
+    },
+    "web_accessible_resources": [
+        {
+            "resources": [
+                "/images/cloud.svg",
+                "/images/cloud-redDot.svg",
+                "/images/emissionyouwear_3.svg",
+                "/images/footprint.svg",
+                "/images/water.svg",
+                "images/title_4.svg"
+            ],
+            "matches": [
+                "<all_urls>"
+            ]
+        }
+    ]
+}
